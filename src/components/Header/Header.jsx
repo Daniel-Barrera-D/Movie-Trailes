@@ -18,7 +18,7 @@ const Logo = styled.img`
     cursor: pointer;
 `
 
-export const BtnHeader = styled.a`
+const BtnHeader = styled.section`
     text-align: center;
     border-radius: 3px;
     padding: 10px 20px;

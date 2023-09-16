@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Movie from "../Movie/Movie";
 import TitleGenre from "../TitleGenre/TitleGenre";
+import Slider from "../Slider/Slider";
 
 const DescGenre = styled.p`
     color: #F5F5F5;
@@ -15,19 +15,23 @@ const Information = styled.div`
 
 const Content = styled.section`
     display: flex;
+    height: 260px;
     flex-direction: column;
     background-color: #000000;
     /* height: 270px; */
     align-items: flex-start;
     padding: 0 30px;
     padding-top: 30px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 `
-
-const SectionMovie = styled.div`
-    display: flex;
-    flex-wrap: wrap ;
-    gap: 15px;
-`
+// const SectionMovie = styled.div`
+//     display: flex;
+//     /* flex-wrap: wrap ; */
+//     gap: 35px;
+//     width: 100%;
+//     cursor: grab;
+// `
 
 const Generes = () => {
     return(
@@ -37,15 +41,14 @@ const Generes = () => {
                 <TitleGenre>Acción</TitleGenre>
                 <DescGenre>Mejores películas de acción</DescGenre>
             </Information>
-            <SectionMovie>
-                <Movie/>
-                <Movie/>
-                <Movie/>
-                <Movie/>
-                <Movie/>
-            </SectionMovie>
-            </Content>
             
+                {/* <Movie/>
+                <Movie/>
+                <Movie/>
+                <Movie/> */}
+            <Slider />
+            
+            </Content>
         </>
     )
 }

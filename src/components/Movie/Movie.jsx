@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-const CardMovie = styled.iframe`
+const SectionCard = styled.div`
+    transition: transform 0.3s;
+    &:hover{
+        transform: scale(1.1);
+    }
+`
+
+const CardMovie = styled.div`
     width: 350px;
     height: 190px;
     border: 2px solid #6BD1FF;
@@ -12,7 +19,9 @@ const CardMovie = styled.iframe`
 
 const Movie = () => {
     return(
-        <CardMovie ></CardMovie>
+        <SectionCard>
+            <CardMovie/>
+        </SectionCard>
     )
 }
 
