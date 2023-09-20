@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Button from "../components/Button/Button"
 
-const NuevoVideo = () => {
+const NewVideo = () => {
     return (
         <section>
             <h3>Vista para agregar nuevo video</h3>
@@ -11,4 +11,4 @@ const NuevoVideo = () => {
     )
 }
 
-export default NuevoVideo
+export default NewVideo

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { DataContext } from "../../context/DataContext";
 
 const StyledBanner = styled.div`
     display: flex;
@@ -13,7 +15,7 @@ const TitleCategoryBanner = styled.h1`
     display: flex;
     margin-top: 0;
     margin-bottom: 40px;
-    background-color: #6BD1FF;
+    background-color: ${props => props.color};
     color: #F5F5F5;
     font-size: 35px;
     padding: 15px;
@@ -42,20 +44,25 @@ const Information = styled.div`
 `
 
 const CardVideoBanner = styled.iframe`
-    border: 3.5px solid #6BD1FF;
+    border: 3.5px solid ${props => props.color};
     width: 900px;
     height: 350px;
 `
 
 const Banner = () => {
+
+    const { dataBanner } = useContext(DataContext);
+
+    const { genre, title, synopsis, urlVideo, color } = dataBanner;
+
     return(
         <StyledBanner>
             <Information>
-                <TitleCategoryBanner>Acción</TitleCategoryBanner>
-                <TitleMovieBanner>John Wick</TitleMovieBanner>
-                <Synopsis>Lorem ipsum dolor sit amet consectetur adipisicing elit. </Synopsis>
+                <TitleCategoryBanner color={color}>{genre}</TitleCategoryBanner>
+                <TitleMovieBanner>{title}</TitleMovieBanner>
+                <Synopsis>{synopsis}</Synopsis>
             </Information>
-            <CardVideoBanner src="https://www.youtube.com/embed/8ubRKDsM1FI?si=yeEOEATYVqkiNuzu" />
+            <CardVideoBanner color={color} src={urlVideo} />
         </StyledBanner>
     )
 }

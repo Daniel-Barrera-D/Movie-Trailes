@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { DataContext } from "../../context/DataContext";
 
 const SectionCard = styled.div`
     transition: transform 0.3s;
@@ -9,18 +11,34 @@ const SectionCard = styled.div`
 
 const CardMovie = styled.div`
     width: 350px;
-    height: 190px;
-    border: 2px solid #6BD1FF;
-    background-image: url("https://i.ytimg.com/vi/8ubRKDsM1FI/maxresdefault.jpg");
-    background-size: 100%;
+    height: 197px;
+    border: 3px solid ${props => props.color};
+    /* background-image: url("https://i.ytimg.com/vi/8ubRKDsM1FI/maxresdefault.jpg"); */
+    /* background-size: 100%; */
     background-repeat: no-repeat;
 `
 
 
-const Movie = () => {
+const Movie = (props) => {
+
+    const { genre, synopsis, title, urlVideo, urlImage } = props.data;
+    const { color } = props;
+
+    const { setDataBanner } = useContext(DataContext);
+
+    const sendData = {
+        genre,
+        title,
+        synopsis,
+        urlVideo,
+        color
+    }
+    
     return(
         <SectionCard>
-            <CardMovie/>
+            <CardMovie color={color} onClick={() => setDataBanner(sendData)}>
+                <img style={{width:"100%"}} src={urlImage} alt="foto"/>
+            </CardMovie>
         </SectionCard>
     )
 }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const TitleGenre = styled.label`
     display: flex;
-    background-color: #6BD1FF;
+    background-color: ${props => props.color};
     color: #F5F5F5;
     font-size: 20px;
     padding: 8px 15px;

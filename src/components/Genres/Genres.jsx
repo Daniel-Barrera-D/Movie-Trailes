@@ -8,6 +8,7 @@ const DescGenre = styled.p`
 `
 
 const Information = styled.div`
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -15,7 +16,7 @@ const Information = styled.div`
 
 const Content = styled.section`
     display: flex;
-    height: 260px;
+    height: 275px;
     flex-direction: column;
     background-color: #000000;
     /* height: 270px; */
@@ -33,22 +34,25 @@ const Content = styled.section`
 //     cursor: grab;
 // `
 
-const Generes = () => {
+const Generes = (props) => {
+
+    const { genre, descGenre, color } = props.data;
+    const { movies } = props;
+
     return(
         <>
+        {
+            movies.length > 0 &&
             <Content>
             <Information>
-                <TitleGenre>Acción</TitleGenre>
-                <DescGenre>Mejores películas de acción</DescGenre>
+                <TitleGenre color={color}>{ genre }</TitleGenre>
+                <DescGenre>{ descGenre }</DescGenre>
             </Information>
-            
-                {/* <Movie/>
-                <Movie/>
-                <Movie/>
-                <Movie/> */}
-            <Slider />
+
+            <Slider movies={movies} color={color}/>
             
             </Content>
+        }
         </>
     )
 }
