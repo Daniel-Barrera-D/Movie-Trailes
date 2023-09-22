@@ -34,7 +34,7 @@ const BtnHeader = styled.section`
 const Header = () => {
     return <StyledHeader>
         <Link to={"/"}><Logo src={ logo } alt="Logo"/></Link>
-        <Link to="/nuevo-video" style={ {textDecoration: 'none'} }><BtnHeader>Nuevo Video</BtnHeader></Link>
+        <Link to="/new-video" style={ {textDecoration: 'none'} }><BtnHeader>Nuevo Video</BtnHeader></Link>
         
     </StyledHeader>
 }

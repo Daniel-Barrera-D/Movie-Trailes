@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-const Button = styled.section`
+const Button = styled.button`
+    margin: 0;
+    margin-top: 20px;
+    width: fit-content;
     text-align: center;
-    width: max-content;
     background-color: #2A7AE4;
     border-radius: 3px;
     padding: 10px 20px;
