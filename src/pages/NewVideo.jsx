@@ -20,13 +20,17 @@ const NewVideo = () => {
     const [genre, updateGenre] = useState("");
     const [synopsis, updateSynopsis] = useState("");
 
-    //Registrar Nueva Película
-    const registerMovie = (movie) => {
-        updateMovies(...movies, movie);
+    //Evitar recargar la pagina al enviar datos por el formulario
+    const handleSubmit = (e) => {
+        e.preventDefault()
     }
 
-    const handleSubmitMovie = (e) => {
-        e.preventDefault();
+    //Registrar Nueva Película
+    const registerMovie = (movie) => {
+        updateMovies([...movies, movie]);
+    }
+
+    const handleSubmitMovie = () => {
         console.log("Enviando película...");
         let sendData = {
             title,
@@ -35,21 +39,33 @@ const NewVideo = () => {
             urlVideo,
             urlImage
         }
-        console.log(sendData);
+        registerMovie(sendData);
+    }
+
+    const handleResetForm = () => {
+        console.log("Limpiando...");
+        updateTitle('');
+        updateUrlVideo('');
+        updateUrlImage('');
+        updateGenre('');
+        updateSynopsis('');
     }
 
     return (
-        <SectionForm onSubmit={ handleSubmitMovie }>
+        <SectionForm onSubmit={handleSubmit}>
             <TitlePage>Nuevo Video</TitlePage>
-            <Input 
+            <Input
+                value={title}
                 text="Nombre Película"
                 updateValue = { updateTitle }
             />
-            <Input 
+            <Input
+                value={urlVideo} 
                 text="Link del vídeo"
                 updateValue = { updateUrlVideo }
             />
-            <Input 
+            <Input
+                value={urlImage} 
                 text="Link de la imágen del vídeo"
                 updateValue = { updateUrlImage }
             />
@@ -58,13 +74,14 @@ const NewVideo = () => {
                 updateGenre = { updateGenre }
                 genres = { genres.map((genre) => genre.genre )}
             />
-            <Input 
+            <Input
+                value={synopsis}
                 text="Sinopsis"
                 updateValue = { updateSynopsis }
             />
             <SectionButtons>
-                <Button>Guardar</Button>
-                <Button>Limpiar</Button>
+                <Button onClick={handleSubmitMovie}>Guardar</Button>
+                <Button onClick={handleResetForm}>Limpiar</Button>
                 <Link to={"/new-category"} style={ {textDecoration: "none"} }><Button>Nueva Categoria</Button></Link>
             </SectionButtons>
         </SectionForm>
