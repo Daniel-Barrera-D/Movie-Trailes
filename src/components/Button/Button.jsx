@@ -1,20 +1,13 @@
-import styled from "styled-components";
+import React from "react";
+import { Button } from "@mui/material";
 
-const Button = styled.button`
-    margin: 0;
-    margin-top: 20px;
-    width: fit-content;
-    text-align: center;
-    background-color: #2A7AE4;
-    border-radius: 3px;
-    padding: 10px 20px;
-    color: #FFFFFF;
-    border: 1px solid #2A7AE4;
-    transition: 0.15s all ease-out;
-    cursor: pointer;
-    &:hover {
-        background-color: #1E5CAD;
-    }
-`
+const Btn = (props) => {
 
-export default Button;
+    const { text, color, func } = props
+
+    return(
+        <Button size="medium" variant="contained" color={color} onClick={func}>{text}</Button>
+    )
+}
+
+export default Btn;

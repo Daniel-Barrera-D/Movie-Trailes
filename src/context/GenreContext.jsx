@@ -25,7 +25,7 @@ const dataGenres = [
     {
         id: uuidv4(),
         genre: "Drama",
-        descGenre: "Mejores película de suspenso",
+        descGenre: "Mejores película de drama",
         color: "#1D8192"
     },
 ];

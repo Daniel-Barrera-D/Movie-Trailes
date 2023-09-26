@@ -3,11 +3,12 @@ import { Link } from "react-router-dom"
 import Button from "../components/Button/Button"
 import TitlePage from "../components/TitlePage/TitlePage"
 import Input from "../components/Input/Input"
-import SectionButtons from "../components/SectionButtons/SectionButtons"
+import SectionButtons, { ButtonsContainer } from "../components/SectionButtons/SectionButtons"
 import ListOptions from "../components/ListOptions/ListOptions"
 import SectionForm from "../components/Form/Form"
 import { GenreContext } from "../context/GenreContext"
 import { MovieContext } from "../context/MovieContext"
+import Btn from "../components/Button/Button"
 
 const NewVideo = () => {
 
@@ -79,11 +80,13 @@ const NewVideo = () => {
                 text="Sinopsis"
                 updateValue = { updateSynopsis }
             />
-            <SectionButtons>
-                <Button onClick={handleSubmitMovie}>Guardar</Button>
-                <Button onClick={handleResetForm}>Limpiar</Button>
-                <Link to={"/new-category"} style={ {textDecoration: "none"} }><Button>Nueva Categoria</Button></Link>
-            </SectionButtons>
+            <ButtonsContainer>
+                <SectionButtons>
+                    <Btn func={handleSubmitMovie} text="Guardar" color="success"></Btn>
+                    <Btn func={handleResetForm} text="Limpiar" color="info"></Btn>
+                </SectionButtons>
+                <Link to={"/new-category"} style={ {textDecoration: "none"} }><Button text="Nueva Categoria"></Button></Link>
+            </ButtonsContainer>
         </SectionForm>
     )
 }
