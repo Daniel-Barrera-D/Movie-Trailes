@@ -9,6 +9,7 @@ import SectionForm from "../components/Form/Form"
 import { GenreContext } from "../context/GenreContext"
 import { MovieContext } from "../context/MovieContext"
 import Btn from "../components/Button/Button"
+import { v4 as uuidv4 } from 'uuid';
 
 const NewVideo = () => {
 
@@ -23,24 +24,28 @@ const NewVideo = () => {
 
     //Evitar recargar la pagina al enviar datos por el formulario
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
     }
 
     //Registrar Nueva Película
     const registerMovie = (movie) => {
-        updateMovies([...movies, movie]);
+        updateMovies([...movies, {...movie, id: uuidv4() }]);
     }
 
     const handleSubmitMovie = () => {
-        console.log("Enviando película...");
-        let sendData = {
-            title,
-            genre,
-            synopsis,
-            urlVideo,
-            urlImage
-        }
+        if(title === '' || urlVideo === '' || urlImage === '' || genre === '' || synopsis === ''){
+            alert("Verifique que los campos no esten vacíos");
+        }else{
+            console.log("Enviando película...");
+            let sendData = {
+                title,
+                genre,
+                synopsis,
+                urlVideo,
+                urlImage
+            }
         registerMovie(sendData);
+        }
     }
 
     const handleResetForm = () => {

@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Delete, Edit } from "@mui/icons-material";
 import { GenreContext } from "../../context/GenreContext";
 
-const BasicTable = () => {
+const BasicTable = (props) => {
 
     const { genres } = useContext(GenreContext);
-
-    // const { genre, descGenre } = genres;
-
+    const {func} = props;
+    // console.log(func);
+    
     return(
         <TableContainer>
             <Table>
@@ -27,8 +28,8 @@ const BasicTable = () => {
                         >
                             <TableCell>{genre.genre}</TableCell>
                             <TableCell>{genre.descGenre}</TableCell>
-                            <TableCell>Btn editar</TableCell>
-                            <TableCell>Btn eliminar</TableCell>
+                            <TableCell><IconButton onClick={()=>func(genre.id, genre.genre, genre.descGenre, genre.color)}><Edit /></IconButton></TableCell>
+                            <TableCell><IconButton><Delete /></IconButton></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
