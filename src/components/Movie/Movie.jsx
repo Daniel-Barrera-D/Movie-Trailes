@@ -21,13 +21,13 @@ const CardMovie = styled.div`
 
 const Movie = (props) => {
 
-    const { genre, synopsis, title, urlVideo, urlImage } = props.data;
+    const { genreMovie, synopsis, title, urlVideo, urlImage } = props.data;
     const { color } = props;
 
     const { setDataBanner } = useContext(DataContext);
 
     const sendData = {
-        genre,
+        genreMovie,
         title,
         synopsis,
         urlVideo,
@@ -37,7 +37,7 @@ const Movie = (props) => {
     return(
         <SectionCard>
             <CardMovie color={color} onClick={() => setDataBanner(sendData)}>
-                <img style={{width:"100%"}} src={urlImage} alt="foto"/>
+                <img style={{width:"100%"}} src={urlImage} alt="foto" draggable="false"/>
             </CardMovie>
         </SectionCard>
     )

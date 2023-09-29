@@ -53,12 +53,12 @@ const Banner = () => {
 
     const { dataBanner } = useContext(DataContext);
 
-    const { genre, title, synopsis, urlVideo, color } = dataBanner;
+    const { genreMovie, title, synopsis, urlVideo, color } = dataBanner;
 
     return(
         <StyledBanner>
             <Information>
-                <TitleCategoryBanner color={color}>{genre}</TitleCategoryBanner>
+                <TitleCategoryBanner color={color}>{genreMovie}</TitleCategoryBanner>
                 <TitleMovieBanner>{title}</TitleMovieBanner>
                 <Synopsis>{synopsis}</Synopsis>
             </Information>

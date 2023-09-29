@@ -19,7 +19,7 @@ const NewVideo = () => {
     const [title, updateTitle] = useState("");
     const [urlVideo, updateUrlVideo] = useState("");
     const [urlImage, updateUrlImage] = useState("");
-    const [genre, updateGenre] = useState("");
+    const [genreMovie, updateGenre] = useState("");
     const [synopsis, updateSynopsis] = useState("");
 
     //Evitar recargar la pagina al enviar datos por el formulario
@@ -33,13 +33,13 @@ const NewVideo = () => {
     }
 
     const handleSubmitMovie = () => {
-        if(title === '' || urlVideo === '' || urlImage === '' || genre === '' || synopsis === ''){
+        if(title === '' || urlVideo === '' || urlImage === '' || genreMovie === '' || synopsis === ''){
             alert("Verifique que los campos no esten vacíos");
         }else{
             console.log("Enviando película...");
             let sendData = {
                 title,
-                genre,
+                genreMovie,
                 synopsis,
                 urlVideo,
                 urlImage
@@ -76,7 +76,7 @@ const NewVideo = () => {
                 updateValue = { updateUrlImage }
             />
             <ListOptions
-                value= { genre }
+                value= { genreMovie }
                 updateGenre = { updateGenre }
                 genres = { genres.map((genre) => genre.genre )}
             />

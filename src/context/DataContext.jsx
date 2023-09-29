@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const DataContext = createContext();
 
 const dataFixed = {
-    genre: "Acción",
+    genreMovie: "Acción",
     title: "Jonh Wick",
     synopsis: "El marqués Vincent de Gramont pretende matar a John Wick para afianzar su poder en la Orden Suprema.",
     urlVideo: "https://www.youtube.com/embed/8ubRKDsM1FI?si=yeEOEATYVqkiNuzu",

@@ -7,7 +7,7 @@ import { GenreContext } from "../../context/GenreContext";
 const BasicTable = (props) => {
 
     const { genres } = useContext(GenreContext);
-    const {func} = props;
+    const { editGenre, deleteGenre } = props;
     // console.log(func);
     
     return(
@@ -28,8 +28,8 @@ const BasicTable = (props) => {
                         >
                             <TableCell>{genre.genre}</TableCell>
                             <TableCell>{genre.descGenre}</TableCell>
-                            <TableCell><IconButton onClick={()=>func(genre.id, genre.genre, genre.descGenre, genre.color)}><Edit /></IconButton></TableCell>
-                            <TableCell><IconButton><Delete /></IconButton></TableCell>
+                            <TableCell><IconButton  color="primary" onClick={()=>editGenre(genre.id, genre.genre, genre.descGenre, genre.color)}><Edit /></IconButton></TableCell>
+                            <TableCell><IconButton color="error" onClick={() => deleteGenre(genre.id)}><Delete /></IconButton></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

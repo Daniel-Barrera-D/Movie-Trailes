@@ -17,7 +17,7 @@ const Home = () => {
                 genres.map((genre) => <Generes
                     data = { genre }
                     key={ genre.genre }
-                    movies = { movies.filter(movie => movie.genre === genre.genre) }
+                    movies = { movies.filter(movie => movie.genreMovie === genre.genre) }
                 />)
             }
         </>
