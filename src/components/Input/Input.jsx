@@ -2,10 +2,11 @@ import { TextField } from "@mui/material";
 
 const Input = (props) => {
 
-    const { text, updateValue, value, type } = props;
+    const { text, updateValue, value, type, validateData, error, helperText } = props;
 
     const handleChange = (e) => {
-        updateValue(e.target.value);
+        const data = e.target.value
+        updateValue({value : data, valid : validateData(data)});
     }
 
     return(
@@ -16,7 +17,10 @@ const Input = (props) => {
             label={text}
             variant="filled"
             value={value}
+            error={error}
+            helperText={helperText}
             onChange={ handleChange }
+            onBlur={ handleChange }
         />
     )
 }

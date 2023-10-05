@@ -16,6 +16,10 @@ const Logo = styled.img`
     width: 200px;
     height: 40px;
     cursor: pointer;
+    @media (max-width: 400px) {
+        width: 150px;
+        height: 25px;
+    }
 `
 
 const BtnHeader = styled.section`
@@ -28,6 +32,9 @@ const BtnHeader = styled.section`
     cursor: pointer;
     &:hover {
         background-color: #3D3B3B;
+    }
+    @media (max-width: 370px) {
+        font-size: small;
     }
 `
 

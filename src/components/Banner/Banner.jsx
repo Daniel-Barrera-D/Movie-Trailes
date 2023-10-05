@@ -9,6 +9,9 @@ const StyledBanner = styled.div`
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(0deg, rgba(34,48,107,1) 12%, rgba(10,3,28,1) 88%);
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
 `
 
 const TitleCategoryBanner = styled.h1`
@@ -41,12 +44,18 @@ const Information = styled.div`
     width: 1500px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `
 
 const CardVideoBanner = styled.iframe`
     border: 3.5px solid ${props => props.color};
     width: 900px;
     height: 350px;
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `
 
 const Banner = () => {

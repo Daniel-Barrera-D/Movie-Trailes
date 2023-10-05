@@ -25,6 +25,9 @@ const Content = styled.section`
     padding-top: 30px;
     overflow-x: hidden;
     overflow-y: hidden;
+    @media (max-width: 400px) {
+        height: 280px;
+    }
 `
 // const SectionMovie = styled.div`
 //     display: flex;
