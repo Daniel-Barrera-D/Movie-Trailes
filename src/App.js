@@ -9,6 +9,7 @@ import { DataProvider } from './context/DataContext';
 import { AppMui } from './components/Mui/AppMui';
 import { MovieProvider } from './context/MovieContext';
 import { GenreProvider } from './context/GenreContext';
+import NotFound from './pages/Page404';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path='/' element={ <Home /> }/>
                 <Route path='/new-video' element={ <NewVideo /> }/>
                 <Route path='/new-category' element={ <NewCategory/> } />
+                <Route path='*' element={ <NotFound/> }/>
               </Routes>
               <Footer/>
             </Router>
