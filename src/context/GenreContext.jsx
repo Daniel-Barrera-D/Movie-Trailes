@@ -7,25 +7,25 @@ const dataGenres = [
     {
         id: uuidv4(),
         genre: "Acción",
-        descGenre: "Mejores película de acción",
+        descGenre: "Mejores películas de acción",
         color: "#6BD1FF"
     },
     {
         id: uuidv4(),
         genre: "Comedia",
-        descGenre: "Mejores película de comedia",
+        descGenre: "Mejores películas de comedia",
         color: "#00C86F"
     },
     {
         id: uuidv4(),
         genre: "Suspenso",
-        descGenre: "Mejores película de suspenso",
+        descGenre: "Mejores películas de suspenso",
         color: "#6B5BE2"
     },
     {
         id: uuidv4(),
         genre: "Drama",
-        descGenre: "Mejores película de drama",
+        descGenre: "Mejores películas de drama",
         color: "#1D8192"
     },
 ];
